@@ -13,13 +13,13 @@ export default function HeroHeading() {
           <span className={styles.badge}>
             <div className={styles.avatarGroup}>
               <div className={styles.avatar}>
-                <Image src="/avatar1.jpg" alt="Client 1" width={28} height={28} />
+                <Image src="/land3.jpg" alt="Client 1" width={28} height={28} />
               </div>
               <div className={styles.avatar}>
-                <Image src="/avatar2.jpg" alt="Client 2" width={28} height={28} />
+                <Image src="/land2.png" alt="Client 2" width={28} height={28} />
               </div>
               <div className={styles.avatar}>
-                <Image src="/avatar3.jpg" alt="Client 3" width={28} height={28} />
+                <Image src="/land1.png" alt="Client 3" width={28} height={28} />
               </div>
             </div>
             <div className={styles.badgeText}>
