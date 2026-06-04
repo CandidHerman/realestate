@@ -1,0 +1,235 @@
+.sectionContainer {
+  background-color: #ffffff;
+  padding: 80px 5%;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #111111;
+  margin: 0 auto;
+}
+
+/* Header Text Styles */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.topBadge {
+  font-size: 13px;
+  color: #666666;
+  border: 1px solid #e5e5e5;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 600;
+  margin: 20px 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #666666;
+  font-size: 15px;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Filter Navigation */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.filterTab {
+  border: 1px solid #efefef;
+  background-color: #ffffff;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #666666;
+}
+
+.activeTab {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+/* Property Grid Layout */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+/* Card Image Area with Floating Thumbnails */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.mainCardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrowOverlayBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  color: #000;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* In-image thumbnail navigation bar */
+.thumbnailTrack {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.thumbImg {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+/* Card Content Area */
+.cardContent {
+  padding: 16px 8px 8px 8px;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.cardLocation {
+  font-size: 14px;
+  color: #666666;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.locIcon {
+  font-size: 12px;
+}
+
+/* Features Footer Text Block */
+.featuresLine {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #e5e5e5;
+  padding-top: 14px;
+  font-size: 13px;
+  color: #666666;
+}
+
+/* Section Bottom Navigation Bar */
+.footerControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.exploreBtn {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 14px 36px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.arrowGroup {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.navArrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  background-color: #313131;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.navArrow:hover {
+  background-color: #8b8b8b;
+}
+
+/* Responsive Rules for Tablet and Mobile viewports */
+@media (max-width: 992px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .arrowGroup {
+    position: static;
+    margin-top: 20px;
+  }
+  .footerControls {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 28px;
+  }
+}

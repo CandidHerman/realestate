@@ -1,0 +1,193 @@
+.filterContainer {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  max-width: 90vw;
+  margin: 0 auto;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Top bar row spacing */
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Rent / Buy Toggle Container */
+.toggleTabs {
+  display: flex;
+  background-color: #f5f5f5;
+  padding: 6px;
+  border-radius: 14px;
+}
+
+.tabBtn {
+  border: none;
+  background: transparent;
+  padding: 10px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #1a1a1a;
+}
+
+.activeTab {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+/* Review Badges styling */
+.reviews {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatarGroup {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -8px; /* Overlap effect */
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.ratingText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.star {
+  color: #ffb800;
+}
+
+.reviewCount {
+  color: #a0a0a0;
+  font-weight: 400;
+}
+
+/* Bottom Grid System */
+.filterGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr auto; /* Dynamically sizes columns */
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  color: #8c8c8c;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
+/* Input Fields & Dropdown container styles */
+.inputWrapper, .selectWrapper {
+  position: relative;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  border: 1px solid transparent;
+}
+
+.inputField, .selectField {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  color: #111111;
+  font-weight: 500;
+  appearance: none; /* Removes default OS styling for dropdown arrows */
+}
+
+/* Custom styled arrow for dropdown selects */
+.selectWrapper::after {
+  content: ' ';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-top-color: #111111;
+  pointer-events: none;
+}
+
+/* Dark Search Button */
+.btnContainer {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.searchBtn {
+  background: linear-gradient(135deg, #2c2c2c, #111111);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0 36px;
+  height: 52px; /* Matches input field heights */
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.searchBtn:hover {
+  opacity: 0.9;
+}
+
+.arrow {
+  font-size: 16px;
+}
+
+/* Responsive view for tablets/mobiles */
+@media (max-width: 900px) {
+  .filterGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btnContainer {
+    grid-column: span 2;
+  }
+  .searchBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+  .btnContainer {
+    grid-column: span 1;
+  }
+  .topRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

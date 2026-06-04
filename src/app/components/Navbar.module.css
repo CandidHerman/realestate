@@ -1,0 +1,305 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+/* Container for links and secondary controls */
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* Links Group Layout */
+.navGroup {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navLink {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.navLink.active {
+  background-color: #ffffff;
+  color: #1a2332;
+  border-color: #ffffff;
+}
+
+/* Center Logo Layout Placement */
+.logoContainer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo  {
+  font-size: 2rem;
+}
+
+/* Right Side Configuration Layout */
+.actionsGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: auto; /* Pushes action group to the far right side */
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.socialIcon:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.socialIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.phoneButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: #1a2332;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.phoneIcon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+/* --- Hamburger Mechanics Hidden By Default --- */
+.menuCheckbox {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bar {
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 16px 24px;
+  }
+
+  /* Reveal Hamburger Icon */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Reposition logo container over to the right to fit layouts */
+  .logoContainer {
+    position: static;
+    transform: none;
+  }
+
+  /* Convert Main Content window into full drop-down panel overlay */
+  .navContent {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  background-color: #003d30;
+
+    
+    /* Dynamic Collapse Logic controlled by input state */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 9;
+  }
+
+  .navGroup {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .actionsGroup {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    gap: 16px;
+  }
+
+  .phoneButton {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .signIn {
+    display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  color: #ffffff; /* Ensures the text is white */
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Clean, semi-transparent white border */
+  padding: 8px 20px;
+  border-radius: 24px; /* Keeps the capsule shape from the original design */
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  }
+
+  /* Trigger Layout reveal when target checkbox state values hit checked */
+  .menuCheckbox:checked ~ .navContent {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Animate standard multi-bars into an X close button state */
+  .menuCheckbox:checked ~ .hamburger .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menuCheckbox:checked ~ .hamburger .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menuCheckbox:checked ~ .hamburger .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* --- Sign In Styles --- */
+.signInLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px; /* Spacing between the icon and text */
+  color: #fff; /* Muted grey text */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.signInLink:hover {
+  color: #73ffbe; /* Darkens on hover */
+}
+
+/* Sizing and positioning the login icon */
+.signInIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Contact Us Button Styles --- */
+.contactButton {
+  display: flex;
+  align-items: center;
+  background-color: #004d3d;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 20px 6px 6px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 12px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contactButton:hover {
+  background-color: #003d30;
+}
+
+.contactButton:active {
+  transform: scale(0.98);
+}
+
+.iconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: #004d3d;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+.iconCircle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.buttonText {
+  white-space: nowrap;
+}
